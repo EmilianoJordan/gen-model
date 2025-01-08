@@ -1,0 +1,38 @@
+[project]
+name = "gen-model"
+version = "0.0.1"
+description = "Manage fixtures for ORMs"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "faker>=33.3.0",
+    "pydantic>=2.0",
+    "typing-extensions>=4.12.2",
+]
+
+[dependency-groups]
+test = [
+    "hypothesis>=6.123.9",
+    "pytest>=8.3.4",
+    "tox>=4.23.2",
+]
+dev = [
+    "ipython>=8.18.1",
+]
+lint = [
+    "mypy>=1.14.1",
+    "pre-commit>=4.0.1",
+    "ruff>=0.8.6",
+]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.49",
+    "mkdocstrings-python>=1.13.0",
+]
+
+all = [
+  { include-group = 'test' },
+  { include-group = 'dev' },
+  { include-group = 'lint' },
+  { include-group = 'docs' },
+]
