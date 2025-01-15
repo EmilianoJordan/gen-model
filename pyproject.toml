@@ -12,6 +12,7 @@ dependencies = [
 
 [dependency-groups]
 test = [
+    "django>=4.2",
     "hypothesis>=6.123.9",
     "pytest>=8.3.4",
     "tox>=4.23.2",
@@ -20,7 +21,6 @@ dev = [
     "ipython>=8.18.1",
 ]
 lint = [
-    "mypy>=1.14.1",
     "pre-commit>=4.0.1",
     "ruff>=0.8.6",
 ]
@@ -29,10 +29,14 @@ docs = [
     "mkdocs-material>=9.5.49",
     "mkdocstrings-python>=1.13.0",
 ]
+typing = [
+    "mypy>=1.14.1",
+]
 
 all = [
-  { include-group = 'test' },
-  { include-group = 'dev' },
-  { include-group = 'lint' },
-  { include-group = 'docs' },
+    { include-group = 'test' },
+    { include-group = 'dev' },
+    { include-group = 'lint' },
+    { include-group = 'docs' },
+    { include-group = 'typing' },
 ]

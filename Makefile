@@ -1,4 +1,4 @@
-sources = model-gen tests
+sources = model_gen tests
 
 .PHONY: .uv  ## Check that uv is installed
 .uv:
@@ -13,3 +13,13 @@ install: .uv
 lint: .uv
 	uv run ruff check $(sources)
 	uv run ruff format --check $(sources)
+
+.PHONY: format  ## Format python source files
+format: .uv
+	uv run ruff check --fix $(sources)
+	uv run ruff format $(sources)
+
+
+.PHONY: typecheck  ## Run mypy for type checking
+typecheck: .uv
+	uv run mypy $(sources)

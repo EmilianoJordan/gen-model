@@ -17,9 +17,9 @@ repos:
     exclude: '^uv\.lock$'
 - repo: local
   hooks:
-  - id: lint
-    name: Lint
-    entry: make lint
+  - id: format
+    name: format
+    entry: make format
     types: [python]
     language: system
     pass_filenames: false
